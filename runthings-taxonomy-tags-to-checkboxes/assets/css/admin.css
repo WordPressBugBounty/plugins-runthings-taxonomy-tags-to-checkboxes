@@ -1,0 +1,194 @@
+/**
+ * Admin table styling for Runthings Taxonomy Tags to Checkboxes
+ */
+#taxonomy-table .check-column {
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+  border-right: 1px solid #eee;
+}
+
+#taxonomy-table .check-column input[type="checkbox"] {
+  margin-left: 0;
+}
+
+.tablenav.top {
+  /* margin-top: 0; */
+  padding-top: 0;
+}
+
+.tablenav.top p {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Post type code formatting */
+#taxonomy-table .column-post_types code {
+  border-radius: 2px;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  display: inline-block;
+}
+
+/* No items message */
+.no-taxonomy-items {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.no-taxonomy-items p {
+  margin: 0.5em 0;
+  font-size: 14px;
+}
+
+.no-taxonomy-items p:first-child {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.hidden-system-message {
+  color: #72777c;
+  font-style: italic;
+}
+
+/* Height Column */
+#taxonomy-table th.column-height {
+  padding: 0;
+}
+#taxonomy-table th.column-height,
+#taxonomy-table th.column-show-link,
+#taxonomy-table th.column-allow-create,
+#taxonomy-table th.column-search {
+  padding: 8px;
+}
+.custom-height-input {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.custom-height-input input[type="number"] {
+  width: 70px;
+}
+.min-terms-input {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.min-terms-input input[type="number"] {
+  width: 70px;
+}
+
+/* Show Link Column */
+#taxonomy-table .column-show-link {
+  width: 100px;
+  text-align: center;
+}
+
+#taxonomy-table .column-allow-create {
+  width: 100px;
+  text-align: center;
+}
+#taxonomy-table .column-search {
+  width: 180px;
+}
+
+/* Row actions fade transition */
+#taxonomy-table .row-actions {
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+#taxonomy-table tr:hover .row-actions,
+#taxonomy-table tr:focus-within .row-actions {
+  opacity: 1;
+}
+
+/* Mobile responsive layout */
+@media screen and (max-width: 782px) {
+  /* Hide table headers on mobile */
+  #taxonomy-table thead,
+  #taxonomy-table tfoot {
+    display: none;
+  }
+
+  /* Stack table cells vertically */
+  #taxonomy-table tbody,
+  #taxonomy-table tbody tr,
+  #taxonomy-table tbody td,
+  #taxonomy-table tbody th {
+    display: block;
+    box-sizing: border-box;
+  }
+
+  /* Card style for each visible row */
+  #taxonomy-table tbody tr {
+    border: 1px solid #c3c4c7;
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 12px;
+    margin: 12px;
+  }
+
+  /* Cell styling */
+  #taxonomy-table tbody td,
+  #taxonomy-table tbody th.check-column {
+    padding: 6px 0;
+    border: none;
+    text-align: left;
+  }
+
+  #taxonomy-table tbody th.check-column {
+    border-right: none;
+  }
+
+  /* Labels for mobile columns */
+  #taxonomy-table tbody td[data-colname]::before,
+  #taxonomy-table tbody th.check-column[data-colname]::before {
+    content: attr(data-colname) ": ";
+    font-weight: 600;
+  }
+
+  #taxonomy-table tbody th.check-column {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: auto;
+  }
+
+  #taxonomy-table tbody th.check-column input[type="checkbox"] {
+    margin-bottom: 0;
+  }
+
+  /* Height controls inline */
+  #taxonomy-table .column-height {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #taxonomy-table .height-type-select {
+    min-width: 80px;
+  }
+
+  #taxonomy-table .custom-height-input {
+    margin-top: 0;
+  }
+
+  /* Show link inline */
+  #taxonomy-table .column-show-link,
+  #taxonomy-table .column-allow-create,
+  #taxonomy-table .column-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: auto;
+  }
+
+  /* No items row - don't show as card */
+  #taxonomy-table tbody tr.no-items {
+    border: none;
+    padding: 20px;
+    margin: 0;
+  }
+}
