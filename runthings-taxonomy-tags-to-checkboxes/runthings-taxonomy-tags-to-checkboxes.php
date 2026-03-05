@@ -4,7 +4,7 @@
  * Plugin Name: Taxonomy Tags to Checkboxes
  * Plugin URI: https://runthings.dev/wordpress-plugins/taxonomy-tags-to-checkboxes/
  * Description: Convert taxonomy tags to checkboxes in the WordPress admin.
- * Version: 1.4.0
+ * Version: 1.5.0
  * Author: runthingsdev
  * Author URI: https://runthings.dev/
  * License: GPLv3 or later
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'RUNTHINGS_TTC_VERSION', '1.4.0' );
+define( 'RUNTHINGS_TTC_VERSION', '1.5.0' );
 
 define( 'RUNTHINGS_TTC_BASENAME', plugin_basename( __FILE__ ) );
 define( 'RUNTHINGS_TTC_DIR', plugin_dir_path( __FILE__ ) );
@@ -48,10 +48,14 @@ require_once RUNTHINGS_TTC_DIR . 'lib/config.php';
 require_once RUNTHINGS_TTC_DIR . 'lib/classic-integration.php';
 require_once RUNTHINGS_TTC_DIR . 'lib/block-integration.php';
 require_once RUNTHINGS_TTC_DIR . 'lib/bootstrap.php';
+require_once RUNTHINGS_TTC_DIR . 'lib/clean-up-tool/candidate-scanner.php';
+require_once RUNTHINGS_TTC_DIR . 'lib/clean-up-tool/term-deleter.php';
+require_once RUNTHINGS_TTC_DIR . 'lib/clean-up-tool/notice-manager.php';
+require_once RUNTHINGS_TTC_DIR . 'lib/clean-up-tool/settings-panel.php';
+require_once RUNTHINGS_TTC_DIR . 'lib/clean-up-tool/bootstrap.php';
 
 class Taxonomy_Tags_To_Checkboxes {
     public function __construct() {
-        new Admin_Options();
         new Bootstrap();
 
         add_filter(

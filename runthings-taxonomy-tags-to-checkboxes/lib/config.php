@@ -38,12 +38,13 @@ class Config {
     private $search_settings = [];
 
     public function __construct() {
-        $this->selected_taxonomies = $this->normalize_slug_array(
+        $selected_taxonomies = $this->normalize_slug_array(
             get_option( 'runthings_ttc_selected_taxonomies', [] )
         );
-        $this->selected_taxonomies = $this->normalize_slug_array(
-            apply_filters( 'runthings_ttc_selected_taxonomies', $this->selected_taxonomies )
+        $selected_taxonomies = $this->normalize_slug_array(
+            apply_filters( 'runthings_ttc_selected_taxonomies', $selected_taxonomies )
         );
+        $this->selected_taxonomies = $selected_taxonomies;
 
         $this->allow_term_create = $this->normalize_slug_array(
             get_option( 'runthings_ttc_allow_term_create', [] )
